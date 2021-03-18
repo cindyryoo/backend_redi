@@ -1,14 +1,22 @@
 # quiz 2
 
-# input = "i can go, you can't go"
 
-# input = input.split()
-# print(input)
-
+# quiz 2-a
 def convertToList():
     text = input("write a sentence:")
     li = text.split()
     print(li)
 
+# quiz 2-b
 
-convertToList()
+
+def distinct_strings():
+    text2 = input("write a sentence:")
+    wordlist = text2.split()
+    wordfreq = []
+    for w in wordlist:
+        wordfreq.append(wordlist.count(w))
+
+    print(list(set(zip(wordlist, wordfreq))))
+
+# quiz 2-c
