@@ -10,7 +10,7 @@ def convertToList():
 # quiz 2-b
 
 
-def distinct_strings():
+def wordlist_freq():
     text2 = input("write a sentence:")
     wordlist = text2.split()
     wordfreq = []
@@ -18,5 +18,10 @@ def distinct_strings():
         wordfreq.append(wordlist.count(w))
 
     print(list(set(zip(wordlist, wordfreq))))
+    pair_list = list(set(zip(wordlist, wordfreq)))  # quiz 2-c
+    pair_list.sort()
+    print(pair_list)
 
-# quiz 2-c
+
+convertToList()
+wordlist_freq()
