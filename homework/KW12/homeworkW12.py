@@ -1,16 +1,3 @@
-# Build following classes for restaurant related persons:
-# Chef -
-# It has name, phone, email, address, salary, cuisine_expertise as data variables.
-# It has take_dish_name() and prep_dish() methods.
-# Restaurant_manager -
-# It has name, phone, email, address, salary as data variables.
-# It has staff_payroll(), calculate_billing() and provide_bill() methods.
-# Servers -
-# It has name, phone, email, address, salary as data variables.
-# It has fulfill_book_table_request(), take_customer_order() and send_order_to_kitchen() methods.
-# Customer -
-# It has name, phone, email as data variables.
-# It has send_book_table_request(), give_order() and ask_bill() as methods.
 
 class Person:
     def __init__(self, name, phone, email):
@@ -35,9 +22,12 @@ class Servers(Person):
         print(f"{self.name} sends order to kitchen")
 
 
-class Chef(Servers):
+class Chef(Person):
     def __init__(self, name, phone, email, address, salary, cuisine_expertise):
         super().__init__(name, phone, email)
+        self.address = address
+        self.salary = salary
+        self.cuisine_expertise = cuisine_expertise
 
     def take_dish_name(self, dish_name):
         self.dish_name = dish_name
@@ -80,5 +70,24 @@ class Customer(Person):
         print(f"{self.name} asks bill")
 
 
-customer1 = Customer("Julie", 123456789, "xxx@gmail.com")
-customer1.send_book_table_request()
+# customer1 = Customer("Julie", 123456789, "xxx@gmail.com")
+# customer1.send_book_table_request()
+# customer1.give_order()
+# customer1.ask_bill()
+
+# restaurant_manager1 = Restaurant_manager(
+#     "Thomas", 123456789, "abc@gmail.com", "Munich", "3000")
+
+# restaurant_manager1.staff_payroll()
+# restaurant_manager1.calculate_billing()
+# restaurant_manager1.provide_bill()
+
+# server1 = Servers("Eric", 123456789, "xxx@gmail.com", "Kalrsplatz", "2000")
+# server1.fulfill_book_table_request()
+# server1.take_customer_order()
+# server1.send_order_to_kitchen()
+
+# chef1 = Chef("Gerhard", 123456789, "xxx@gmail.com",
+#              "Marienplatz", "4000", "Itelian dish")
+# chef1.take_dish_name("pasta")
+# chef1.prep_dish_name("pasta")
